@@ -130,6 +130,14 @@ a:hover {
 
 .sect-pt4 {
   padding-top: 4rem;
+  background: linear-gradient(
+  to bottom,
+  #8F5021 0%,
+  #B36A08 20%,
+  #B9AD81 55%,
+  #FBFBFB 85%
+);
+
 }
 
 .sect-mt4 {
@@ -140,8 +148,16 @@ a:hover {
 .title-s {
   font-weight: 600;
   color: #1e1e1e;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
 }
+
+.title-ss{
+  font-weight: 405;
+  color: #1e1e1e;
+  font-size: 1.09rem;
+}
+
+
 
 /*--/ Title A /--*/
 .title-box {
@@ -163,13 +179,49 @@ a:hover {
 .line-mf {
   width: 40px;
   height: 5px;
-  background-color: #0078ff;
+  background-color: #7B542F;
   margin: 0 auto;
 }
+
+.carousel {
+  width: 1020px;       /* ancho del carrusel */
+  height: 480px;      /* alto del carrusel */
+  overflow: hidden;   /* oculta lo que se sale */
+  border-radius: 10px;
+  border: 1px solid #B9AD81;
+  margin: 0 auto
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  animation: slide 10s infinite;
+}
+
+.carousel-track img {
+  width: 1020px;   /* mismo ancho del carrusel */
+  height: 480px;
+  object-fit: cover;
+}
+
+/* Animación que mueve todo hacia la izquierda */
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  33%  { transform: translateX(-400px); }
+  66%  { transform: translateX(-800px); }
+  100% { transform: translateX(0); }
+}
+
 
 /*--/ Title Left /--*/
 .title-box-2 {
   margin-bottom: 3rem;
+}
+
+.lead{
+  color:#1F1F1F ;
+  font-weight: 350;
 }
 
 .title-left {
@@ -180,8 +232,8 @@ a:hover {
   content: "";
   position: absolute;
   height: 3px;
-  background-color: #0078ff;
-  width: 100px;
+  background-color: #C36A2D;
+  width: 315px;
   bottom: -12px;
 }
 
@@ -193,7 +245,7 @@ a:hover {
 .box-shadow-full {
   padding: 3rem 1.25rem;
   position: relative;
-  background-color: #fff;
+  background-color: #F9F6F3;
   margin-bottom: 3rem;
   z-index: 2;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
@@ -218,11 +270,11 @@ a:hover {
   border-radius: 50%;
   line-height: 1.6;
   margin: 0 15px 0 0;
-  box-shadow: 0 0 0 3px #0078ff;
+  box-shadow: 0 0 0 3px #B36A08;
   transition: all 500ms ease;
 }
 .socials .ico-circle:hover {
-  background-color: #0078ff;
+  background-color: #B36A08;
   color: #fff;
   box-shadow: 0 0 0 3px #cde1f8;
   transition: all 500ms ease;
@@ -252,7 +304,7 @@ a:hover {
   line-height: 1.55;
   margin: 0 auto;
   text-align: center;
-  box-shadow: 0 0 0 10px #0078ff;
+  box-shadow: 0 0 0 10px #8F5021;
   display: block;
 }
 
@@ -754,18 +806,35 @@ a:hover {
   }
 }
 
-.skill-mf span {
-  color: #4e4e4e;
+.contenedor-skls{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  color: #1e1e1e;
+  font-size: 1.15rem;
 }
-.skill-mf .progress {
-  background-color: #cde1f8;
-  margin: 0.5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: 0.7rem;
+.bullets {
+  list-style: none;
+  padding-left: 0;
 }
-.skill-mf .progress .progress-bar {
-  height: 0.7rem;
-  background-color: #0078ff;
+.bullets li{
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 6px;
+
+}
+
+.bullets li::before {
+  content: "";
+    width: 13px;   /* ← tamaño del bullet */
+    height: 13px;  /* ← tamaño del bullet */
+    background:  #8F5021; /* color */
+    border-radius: 50%;   /* mantiene forma circular */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
 }
 
 /*--------------------------------------------------------------
@@ -781,7 +850,7 @@ a:hover {
 .service-box:hover .ico-circle {
   transition: all 500ms ease;
   color: #fff;
-  background-color: #0078ff;
+  background-color: #B36A08;
   box-shadow: 0 0 0 10px #cde1f8;
 }
 .service-box .service-ico {
