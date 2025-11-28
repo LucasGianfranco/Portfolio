@@ -184,8 +184,9 @@ a:hover {
 }
 
 .carousel {
-  width: 1020px;       /* ancho del carrusel */
-  height: 480px;      /* alto del carrusel */
+  width: 100%;       /* ancho del carrusel */
+  height: 600px;      /* alto del carrusel */
+  aspect-ratio: 600 / 480;
   overflow: hidden;   /* oculta lo que se sale */
   border-radius: 10px;
   border: 1px solid #B9AD81;
@@ -194,23 +195,33 @@ a:hover {
 
 .carousel-track {
   display: flex;
-  width: 100%;
+  width: calc(100% * 5); /* 5 imágenes */
   height: 100%;
   animation: slide 10s infinite;
 }
 
 .carousel-track img {
-  width: 1020px;   /* mismo ancho del carrusel */
-  height: 480px;
+  width: 100%;   /* mismo ancho del carrusel */
+  height: 100%;
   object-fit: cover;
 }
 
 /* Animación que mueve todo hacia la izquierda */
 @keyframes slide {
   0%   { transform: translateX(0); }
-  33%  { transform: translateX(-400px); }
-  66%  { transform: translateX(-800px); }
-  100% { transform: translateX(0); }
+  20%  { transform: translateX(0); }
+
+  25%  { transform: translateX(-100%); }
+  40%  { transform: translateX(-100%); }
+
+  45%  { transform: translateX(-200%); }
+  60%  { transform: translateX(-200%); }
+
+  65%  { transform: translateX(-300%); }
+  80%  { transform: translateX(-300%); }
+
+  85%  { transform: translateX(-400%); }
+  100% { transform: translateX(-400%); }
 }
 
 
@@ -255,6 +266,7 @@ a:hover {
     padding: 3rem;
   }
 }
+
 
 /*------/ Socials /------*/
 .socials {
